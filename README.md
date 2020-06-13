@@ -29,3 +29,15 @@ To retreive this data from the database use the returned id of POST request to c
 ```
 . ./testapi/get.sh {id}
 ```
+
+
+## Description
+In this project, Flask python library is used to develop a web service application with a POST and a GET microservice. Using the POST request, a video file can be sent to the server running on the default port "0.0.0.0:5000".  
+Given the video file, the server process it using OpenCV library and extracts the image resoluation, fps and number of frames in the file (these parameters are usefull for applying a ML or DL model in training stage and model design) and respond the user's request with a json file containing these information in addition to the recived timestamp.  
+Also these information is recorded in a sqlite3 database created by the test-db docker images on the server.
+
+## Improvement
+The server side code does not completely handle different formats of request and response data and status codes.    
+The server side code can be optimized for faster request and response actions.  
+The  api can be changed to include users' lable for each video when uploading files and the server can be modified to add this lable in the database along with other extracted information for model training purpose.  
+The video file can be processed to extract more meaningful and usefull information for ML and DL application.
